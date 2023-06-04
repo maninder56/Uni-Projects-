@@ -1,0 +1,151 @@
+{
+    "$schema":"http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "user" : {
+            "id":"https://clonepupil-ralphdilemma-3000.codio-box.uk/api/v1/users",
+            "title":"user",
+            "description":"users in database",
+            "type":"object",
+            "properties":{
+                "user_name":{
+                    "description":"unique user name require",
+                    "type":"string"
+                },
+            
+                "user_firstname":{
+                    "description":"first name of user",
+                    "type":"string"
+                },
+
+                "user_lastname":{
+                    "description":"last name of user",
+                    "type":"string"
+                },
+
+                "user_email":{
+                    "description":"user email",
+                    "type":"string"
+                },
+
+                "user_password":{
+                    "description":"set user password",
+                    "type":"string"
+                },
+
+                "dateRegistered":{
+                    "description":"a date when user registered",
+                    "type":"string",
+                    "format": "date"
+                }
+            },
+
+            "required":["user_name", "user_password"], 
+            "additionalProperties": false
+        },
+
+        "userCreated":{
+            "$id": "#userCreated",
+            "title": "User Created",
+            "description": "Confirmation of a successful user update/creation",
+            "type": "object",
+            "properties": {
+                "ID": {
+                    "description": "ID of the new/updated user record",
+                    "type": "integer"
+                },
+                "updated": {
+                    "description": "Boolean indicator of success",
+                    "type": "boolean"
+                },
+                "link": {
+                    "description": "Path to retrieve user record",
+                    "type": "string",
+                    "format": "uri"
+                }
+            }
+        },
+
+        "GetAllUsers":{
+            "$id": "#GetAllUsers",
+            "title": "GetAllUsers",
+            "description": "Confirmation of a successful Get request",
+            "type": "object",
+            "properties": {
+                "link": {
+                    "description": "Path to retrieve user record",
+                    "type": "string",
+                    "format": "uri"
+                },
+
+                "UsersList":{
+                    "description": "show all the users in database",
+                    "type":"object"
+                }
+            }
+        },
+
+        "userlogin":{
+            "$id": "#GetUser",
+            "title": "GetUser",
+            "description": "Confirmation of a successful Get request",
+            "type": "object",
+            "properties": {
+                "username":{
+                    "description": "user name",
+                    "type":"string"
+                },
+
+                "password":{
+                    "description": "user password",
+                    "type" :"string"
+                }
+            }
+        },
+
+        "GetByIdResponse":{
+            "$id": "#GetUser",
+            "title": "GetUser",
+            "description": "Confirmation of a successful Get request",
+            "type": "object",
+            "properties": {
+                "user_name":{
+                    "description":"unique user name require",
+                    "type":"string"
+                },
+            
+                "user_firstname":{
+                    "description":"first name of user",
+                    "type":"string"
+                },
+
+                "user_lastname":{
+                    "description":"last name of user",
+                    "type":"string"
+                },
+
+                "user_email":{
+                    "description":"user email",
+                    "type":"string"
+                }
+            }
+        },
+
+        "deleteResponse":{
+            "$id": "#DeleteUser",
+            "title": "DeleteUser",
+            "description": "Confirmation of a successful Delete request",
+            "type": "object",
+            "properties": {
+                "id" :{
+                    "description": "user id",
+                    "type":"integer"
+                },
+                "deleted":{
+                    "description": "Boolean indicator of success",
+                    "type":"boolean"
+                }
+            }
+        }
+        
+    }
+  }

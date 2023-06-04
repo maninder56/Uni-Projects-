@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Shop_Bike.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Shop_Bike.Views"
+    Shell.FlyoutBehavior="Flyout">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Shell" ApplyToDerivedTypes="True">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource PrimaryColor}"/>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+
+
+    <Shell.FlyoutHeader>
+        <Grid HeightRequest="140" BackgroundColor="{StaticResource PrimaryColor}">
+            <Image Source="bike_icon.png" />
+        </Grid>
+    </Shell.FlyoutHeader>
+    
+
+    <FlyoutItem Title="Home" Icon="home.png">
+        <ShellContent Title="Home" Icon="home.png"
+            ContentTemplate="{DataTemplate local:HomePage}"/>
+
+        <ShellContent Title="Maps" Icon="map.svg"
+            ContentTemplate="{DataTemplate local:MapPage}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Account" Icon="account.png">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:AccountPage}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Cart" Icon="cart.png">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:CartPage}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="About" Icon="question.png">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:AboutPage}" />
+    </FlyoutItem>
+</Shell>

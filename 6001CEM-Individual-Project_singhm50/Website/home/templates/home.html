@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %} Home Page {% endblock %}
+
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{msg}}</p>
+            {% endfor %}
+        {% endif%}
+    {% endwith %}
+
+    <main>
+        <section class="content text-center">
+            <h1>Welcome {{session['user']}} to Book Shop</h1>
+            <p>please select any book that you like to purchase</p> <br>
+
+            <div class="row p-1 m-1">
+                <h3>Popular Books</h3>
+                {% for book in popular %}
+                    <div class="card p-2 m-2" style="width: 18rem;">
+                        <img src="{{book['Image-URL-L']}}" class="card-img-top" alt="book_image">
+                        <div class="card-body">
+                          <p class="card-text">{{book['Book-Title']}}</p>
+                          <p class="card-text">By {{book['Book-Author']}}</p>
+                        </div>
+
+                        <form action="/add" method="post">
+                            <button class="btn btn-dark"
+                                    id="item" 
+                                    name="item" 
+                                    type="submit" 
+                                    value= {{book['ISBN']}}
+                                    > Add to cart </button>
+                        </form><br>
+                        
+                    </div>
+                {% endfor %}
+                </div>
+
+
+                <br>
+            <div class="row p-1 m-1">
+                <h3>All Books</h3>
+            {% for book in books %}
+                <div class="card p-2 m-2" style="width: 18rem;">
+                    <img src="{{book['Image-URL-L']}}" class="card-img-top" alt="book_image">
+                    <div class="card-body">
+                      <p class="card-text">{{book['Book-Title']}}</p>
+                      <p class="card-text">By {{book['Book-Author']}}</p>
+                    </div>
+
+                    <form action="/add" method="post">
+                        <button class="btn btn-dark"
+                                id="item" 
+                                name="item" 
+                                type="submit" 
+                                value= {{book['ISBN']}}
+                                > Add to cart </button>
+                    </form><br>
+                </div>
+            {% endfor %}
+            </div>
+        </section>
+        
+    </main>
+    
+
+    
+    
+
+{% endblock %}

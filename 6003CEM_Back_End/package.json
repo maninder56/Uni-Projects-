@@ -1,0 +1,28 @@
+{
+  "name": "6003cem_singhm50",
+  "version": "1.0.0",
+  "description": "week_1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.coventry.ac.uk/singhm50/6003CEM_singhm50.git"
+  },
+  "author": "maninder",
+  "license": "ISC",
+  "dependencies": {
+    "jsonschema": "^1.4.1",
+    "koa": "^2.14.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-passport": "^6.0.0",
+    "koa-router": "^12.0.0",
+    "passport-http": "^0.3.0",
+    "promise-mysql": "^5.2.0",
+    "role-acl": "^4.5.4"
+  },
+  "devDependencies": {
+    "jsdoc": "^4.0.2"
+  }
+}

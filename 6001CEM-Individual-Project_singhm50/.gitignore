@@ -1,0 +1,17 @@
+.idea
+
+Website/__pycache__/
+
+Website/home/__pycache__/
+
+Website/login/__pycache__/
+
+Website/cart/__pycache__/
+
+Website/about/__pycache__/
+
+Website/access_database/__pycache__/
+
+Website/search/__pycache__/
+
+Website/recomender/__pycache__/

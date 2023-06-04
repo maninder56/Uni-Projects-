@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Shop_Bike.ViewModels"
+             x:Class="Shop_Bike.Views.MapPage"
+             x:DataType="viewmodel:MapViewModel"
+             Title="Map">
+
+
+    <VerticalStackLayout Spacing="20"
+                         VerticalOptions="Center">
+        
+        <Label Text="Open maps to see Shop Bike"
+               HorizontalOptions="Center"
+               Style="{StaticResource PrimaryTitle}"/>
+        <Button Text="Go to Shop Bike"
+                Command="{Binding OpenShopBikeCommand}"
+                HorizontalOptions="CenterAndExpand"
+                Style="{StaticResource ButtonOutline-Custom}"/>
+        
+        <Label Text="Open maps to see nearest Bike Shopes"
+               HorizontalOptions="Center"
+               Style="{StaticResource PrimaryTitle}"/>
+        <Button Text="Look at other Shops"
+                Command="{Binding OpenMapCommand}"
+                HorizontalOptions="CenterAndExpand"
+                Style="{StaticResource ButtonOutline-Custom}"/>
+    </VerticalStackLayout>
+</ContentPage>

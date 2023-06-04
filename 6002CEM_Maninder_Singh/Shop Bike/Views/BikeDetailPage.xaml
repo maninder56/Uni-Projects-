@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Shop_Bike.Views.BikeDetailPage"
+             xmlns:viewmodel="clr-namespace:Shop_Bike.ViewModels"
+             x:DataType="viewmodel:BikeDetailViewModel"
+             Title="{Binding Bike.Name}">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid RowDefinitions="*, Auto">
+                <Label Grid.Row="0"
+                       HorizontalOptions="Center"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                        Text="{Binding Bike.Name}"/>
+
+                <Border Grid.Row="1"
+                        Style="{StaticResource CommonBorder}">
+                    <Border.Stroke>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="Red"
+                          Offset="0.1" />
+                            <GradientStop Color="Pink"
+                          Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Border.Stroke>
+
+
+                    <Image Aspect="AspectFit"
+                           HeightRequest="300"
+                           WidthRequest="350"
+                            Source="{Binding Bike.Image}"/>
+                </Border>
+            </Grid>
+
+            <VerticalStackLayout Padding="20" Spacing="10"
+                                 HorizontalOptions="Center">
+                <VerticalStackLayout>
+                    <Label Text="{Binding Bike.Description}"
+                           Style="{StaticResource BikeDescription}"
+                           LineBreakMode="WordWrap"
+                           LineHeight="1"/>
+                </VerticalStackLayout>
+                
+                <HorizontalStackLayout>
+                    <Label Text="{Binding Bike.Price, StringFormat='Price: £{0}'}"
+                           Style="{StaticResource PriceText}"/>
+                </HorizontalStackLayout>
+                
+            </VerticalStackLayout>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+</ContentPage>
